@@ -70,4 +70,9 @@ def stop_container(id: str):
 @app.route('/containers/start/<string:id>', methods=['POST'])
 def start_container(id: str):
     return container_controller.start(request, id)
+
+
+@app.route('/containers/stats/<string:id>')
+def get_stats_container(id: str):
+    return container_controller.get_stats(request, id)
 # End - Container routes

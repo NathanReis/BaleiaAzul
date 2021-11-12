@@ -42,6 +42,20 @@ def extract_images_data(images: list) -> list:
     return images_data
 
 
+def extract_stats_container_data(stats: dict) -> dict:
+    return {
+        'cpu': {
+            'amount_threads': stats['cpu_stats']['online_cpus'],
+            'usage': stats['cpu_stats']['cpu_usage']['total_usage']
+        },
+        'memory': {
+            'limit': stats['memory_stats']['limit'],
+            'max_usage': stats['memory_stats']['max_usage'],
+            'usage': stats['memory_stats']['usage']
+        }
+    }
+
+
 def get_docker_client() -> DockerClient:
     DOCKER_HOST = os.getenv('DOCKER_API_HOST')
     DOCKER_PORT = os.getenv('DOCKER_API_PORT')

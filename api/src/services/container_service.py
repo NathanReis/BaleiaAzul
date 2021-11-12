@@ -10,6 +10,10 @@ def get_by_id(id: str) -> Container:
     return get_docker_client().containers.get(id)
 
 
+def get_stats(container: Container):
+    return container.stats(stream=False)
+
+
 def run(image: str, port: dict) -> Container:
     return get_docker_client().containers.run(image, detach=True, ports=port)
 
