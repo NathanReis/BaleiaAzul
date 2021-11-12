@@ -1,0 +1,6 @@
+docker==5.0.*
+flask==2.0.*
+python-dotenv==0.19.*
+requests==2.26.*
+
+autopep8==1.6.*
