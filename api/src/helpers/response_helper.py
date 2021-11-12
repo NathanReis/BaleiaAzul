@@ -1,4 +1,4 @@
-from src.enums.docker_enums import DockerModelEnum
+from src.enums.docker_model_enum import DockerModelEnum
 
 
 def create_fail_response(error, status_code=400):
