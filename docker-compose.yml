@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  db:
+    image: mongo:5.0
+    container_name: ba_db
+    volumes:
+      - ./docker/database/data:/data/db
+    env_file:
+      - ./api/.env
