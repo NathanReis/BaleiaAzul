@@ -1,0 +1,6 @@
+api/**/__pycache__
+api/venv
+
+api/.env
+
+docker/database/data
