@@ -1,12 +1,23 @@
 version: "3.8"
 
 services:
-  db:
+  mongo:
     image: mongo:5.0
-    container_name: ba_db
+    container_name: ba_mongo
+    restart: always
     ports:
       - 27017:27017
     volumes:
       - ./docker/database/data:/data/db
+    env_file:
+      - ./api/.env
+  mongo_express:
+    image: mongo-express:0.54
+    container_name: ba_mongo_express
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 8081:8081
     env_file:
       - ./api/.env
