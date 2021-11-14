@@ -38,6 +38,7 @@ def get_stats(request: Request, id: str) -> dict:
 
         return create_success_response(
             extract_stats_container_data(
+                container,
                 container_service.get_stats(container)
             )
         )
