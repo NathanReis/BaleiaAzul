@@ -4,6 +4,8 @@ services:
   db:
     image: mongo:5.0
     container_name: ba_db
+    ports:
+      - 27017:27017
     volumes:
       - ./docker/database/data:/data/db
     env_file:
