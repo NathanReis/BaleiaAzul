@@ -1,3 +1,4 @@
+from datetime import datetime
 from docker import DockerClient
 from docker.models.containers import Container
 from docker.models.images import Image
@@ -54,7 +55,8 @@ def extract_stats_container_data(container: Container, stats: dict) -> dict:
     stats_data = {
         'id': container.short_id,
         'name': container.name,
-        'status': container.status
+        'status': container.status,
+        'timestamp': datetime.utcnow()
     }
 
     if container.status != 'running':

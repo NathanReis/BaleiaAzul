@@ -14,7 +14,6 @@ def save_containers_stats():
     for container in containers:
         stats = container_service.get_stats(container)
         stats_data = extract_stats_container_data(container, stats)
-        stats_data['created_at'] = datetime.utcnow()
 
         db['container_stats'].insert_one(stats_data)
 

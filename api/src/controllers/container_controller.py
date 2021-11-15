@@ -34,12 +34,28 @@ def get_by_id(request: Request, id: str) -> dict:
 
 def get_stats(request: Request, id: str) -> dict:
     try:
+        is_current = request.args.get(
+            'current', default='true', type=str
+        ).lower() == 'true'
+        is_only_running = request.args.get(
+            'only-running', default='false', type=str
+        ).lower() == 'true'
+
         container = container_service.get_by_id(id)
 
+        if is_current:
+            return create_success_response(
+                extract_stats_container_data(
+                    container,
+                    container_service.get_stats(
+                        container, is_current, is_only_running
+                    )
+                )
+            )
+
         return create_success_response(
-            extract_stats_container_data(
-                container,
-                container_service.get_stats(container)
+            container_service.get_stats(
+                container, is_current, is_only_running
             )
         )
     except NotFound as exception:
