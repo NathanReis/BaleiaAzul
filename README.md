@@ -149,6 +149,15 @@ Este job fica a cada 10 segundos consultando os status de todos containers e faz
 
 ---
 
+## Aproveitando
+
+- **Porta 3000 (WEB):** O dashboard feito utilizando o Grafana
+- **Porta 5000 (API):** A API para gerenciamento das imagens e containers
+- **Porta 8081 (WEB):** O Mongo Express para gerenciamento do banco via interface WEB
+- **Porta 27017 (Serviço):** O MongoDB utilizado para armazenar os dados históricos
+
+---
+
 ## 🤓🤓🤓🤓
 
 | Nome                        | R.A.      |
