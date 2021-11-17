@@ -12,7 +12,7 @@ def save_containers_stats():
     containers = container_service.get_all()
 
     for container in containers:
-        stats = container_service.get_stats(container)
+        stats = container_service.get_stats(container, True, False)
         stats_data = extract_stats_container_data(container, stats)
 
         db['container_stats'].insert_one(stats_data)

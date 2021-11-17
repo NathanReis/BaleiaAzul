@@ -1,0 +1,985 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 14,
+      "panels": [],
+      "title": "Grafana",
+      "type": "row"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 1,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount_pids",
+              "text": "Qtd. processos",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "$.data",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_grafana?current=true",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Qtd. de processos",
+      "type": "stat"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 6,
+        "y": 1
+      },
+      "id": 9,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "values": [
+            "percent",
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "limit",
+              "text": "Limite",
+              "type": "number"
+            },
+            {
+              "selector": "usage",
+              "text": "Usando",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "$.data.memory",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_grafana",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memória usada",
+      "type": "piechart"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 11,
+        "y": 1
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "Time",
+              "type": "timestamp"
+            },
+            {
+              "selector": "network.input",
+              "text": "Entrada",
+              "type": "number"
+            },
+            {
+              "selector": "network.output",
+              "text": "Saída",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "timeseries",
+          "global_query_id": "",
+          "json_options": {
+            "columnar": false,
+            "root_is_not_array": false
+          },
+          "refId": "A",
+          "root_selector": "$.data",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_grafana?current=false&only-running=true",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Tráfego de rede",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 6,
+      "panels": [],
+      "title": "MongoDB",
+      "type": "row"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 1,
+        "y": 11
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount_pids",
+              "text": "Qtd. processos",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "$.data",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_mongo",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Qtd. de processos",
+      "type": "stat"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 6,
+        "y": 11
+      },
+      "id": 7,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "values": [
+            "percent",
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "limit",
+              "text": "Limite",
+              "type": "number"
+            },
+            {
+              "selector": "usage",
+              "text": "Usando",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "$.data.memory",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_mongo",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memória usada",
+      "type": "piechart"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 11,
+        "y": 11
+      },
+      "id": 15,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "Time",
+              "type": "timestamp"
+            },
+            {
+              "selector": "network.input",
+              "text": "Entrada",
+              "type": "number"
+            },
+            {
+              "selector": "network.output",
+              "text": "Saída",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "timeseries",
+          "global_query_id": "",
+          "json_options": {
+            "columnar": false,
+            "root_is_not_array": false
+          },
+          "refId": "A",
+          "root_selector": "$.data",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_mongo?current=false&only-running=true",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Tráfego de rede",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 20
+      },
+      "id": 12,
+      "panels": [],
+      "title": "Mongo Express",
+      "type": "row"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 1,
+        "y": 21
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "amount_pids",
+              "text": "Qtd. processos",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "$.data",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_mongo_express",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Qtd. de processos",
+      "type": "stat"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "decimals": 2,
+          "mappings": [],
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 6,
+        "y": 21
+      },
+      "id": 8,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "values": [
+            "percent",
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "limit",
+              "text": "Limite",
+              "type": "number"
+            },
+            {
+              "selector": "usage",
+              "text": "Usando",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "refId": "A",
+          "root_selector": "$.data.memory",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_mongo_express",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memória usada",
+      "type": "piechart"
+    },
+    {
+      "datasource": "Infinity",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 11,
+        "y": 21
+      },
+      "id": 16,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.3",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "timestamp",
+              "text": "Time",
+              "type": "timestamp"
+            },
+            {
+              "selector": "network.input",
+              "text": "Entrada",
+              "type": "number"
+            },
+            {
+              "selector": "network.output",
+              "text": "Saída",
+              "type": "number"
+            }
+          ],
+          "csv_options": {
+            "columns": "",
+            "comment": "",
+            "delimiter": ",",
+            "relax_column_count": false,
+            "skip_empty_lines": false,
+            "skip_lines_with_error": false
+          },
+          "data": "",
+          "filters": [],
+          "format": "timeseries",
+          "global_query_id": "",
+          "json_options": {
+            "columnar": false,
+            "root_is_not_array": false
+          },
+          "refId": "A",
+          "root_selector": "$.data",
+          "source": "url",
+          "type": "json",
+          "url": "http://192.168.1.7:5000/containers/stats/ba_mongo_express?current=false&only-running=true",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Tráfego de rede",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 31,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2021-11-15T12:22:20.569Z",
+    "to": "2021-11-15T15:58:26.202Z"
+  },
+  "timepicker": {},
+  "timezone": "utc",
+  "title": "BaleiaAzul",
+  "uid": "3UnC6xcnk",
+  "version": 6
+}

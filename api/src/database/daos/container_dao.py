@@ -8,7 +8,10 @@ def get_stats(container: Container, is_only_running: bool):
     collection = db['container_stats']
 
     filter = {
-        'id': container.short_id
+        '$or': [
+            {'id': container.short_id},
+            {'name': container.name}
+        ]
     }
 
     if is_only_running:
