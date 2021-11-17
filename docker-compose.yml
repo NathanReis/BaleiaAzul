@@ -32,3 +32,10 @@ services:
       - ./docker/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./docker/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - ./docker/grafana/dashboards:/var/lib/grafana/dashboards
+  nginx:
+    image: nginx:1.21-alpine
+    container_name: ba_nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./web:/usr/share/nginx/html
