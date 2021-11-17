@@ -39,7 +39,7 @@ Uma ferramenta que permite o gerenciamento de imagens e containers para ser usad
 >
 > Todos comandos abaixo estão considerando que seu terminal esteja na pasta raiz do projeto. Ou seja, onde está este README.
 >
-> Caso esteja no Windows, utilize o `cmd` pois todos comandos usados foram escritos para ele.
+> Caso esteja no Windows, utilize o `cmd` pois todos comandos foram usados apenas nele.
 
 ### Clone o projeto
 
@@ -83,9 +83,10 @@ docker-compose up -d
 
 Quando subir os container, os seguintes serviços estarão funcionando:
 
-- MongoDB: Responsável por armazenar os dados históricos dos containers.
-
-- Mongo Express: Uma interface WEB para gerenciamento do MongoDB, para acessá-la vá no navegador e coloque `localhost:8081`.
+- **Grafana:** A aplicação responsável pelos dashboards das estatisticas dos containers.
+- **MongoDB:** Responsável por armazenar os dados históricos dos containers.
+- **Mongo Express:** Uma interface WEB para gerenciamento do MongoDB.
+- **NGINX:** O servidor WEB que irá cuidar do front-end.
 
 ### Inicie a API
 
@@ -121,7 +122,7 @@ Para auxiliar no consumo dela, foi deixado do arquivo de sua collection dentro d
 
 **Obs.:** Após iniciar a API, o terminal onde os comandos foram executados ficará ocupado.
 
-### Inicie o job
+### Inicie o script para armazenar os dados históricos
 
 #### Linux
 
@@ -141,9 +142,9 @@ venv\Scripts\activate
 venv\Scripts\python.exe save_containers_stats_job.py
 ```
 
-Este job fica a cada 10 segundos consultando os status de todos containers e fazendo a persistência dos mesmos no MongoDB.
+Este script cria um job que fica a cada 10 segundos consultando os status de todos containers e fazendo a persistência dos mesmos no MongoDB.
 
-**Obs.:** Após iniciar o job, o terminal onde os comandos foram executados ficará opucado.
+**Obs.:** Após iniciar o script, o terminal onde os comandos foram executados ficará opucado.
 
 💥 **Tudo pronto para uso** 💥
 
@@ -151,6 +152,7 @@ Este job fica a cada 10 segundos consultando os status de todos containers e faz
 
 ## Aproveitando
 
+- **Porta 80 (WEB):** O front-end feito utilizando HTML, CSS, JavaScript básico
 - **Porta 3000 (WEB):** O dashboard feito utilizando o Grafana
 - **Porta 5000 (API):** A API para gerenciamento das imagens e containers
 - **Porta 8081 (WEB):** O Mongo Express para gerenciamento do banco via interface WEB
