@@ -18,8 +18,8 @@ def get_stats(container: Container, is_current: bool, is_only_running: bool):
     return container_dao.get_stats(container, is_only_running)
 
 
-def run(image: str, port: dict) -> Container:
-    return get_docker_client().containers.run(image, detach=True, ports=port)
+def run(image: str, port: dict, name: str) -> Container:
+    return get_docker_client().containers.run(image, detach=True, ports=port, name=name)
 
 
 def stop(container: Container):

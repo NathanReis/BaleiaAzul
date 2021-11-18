@@ -71,10 +71,11 @@ def run(request: Request) -> dict:
 
         image = request_data['image']
         port = request_data['port']
+        name = request_data['name']
 
         return create_success_response(
             extract_container_data(
-                container_service.run(image, port)
+                container_service.run(image, port, name)
             )
         )
     except ImageNotFound as exception:
