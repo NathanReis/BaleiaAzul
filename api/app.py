@@ -1,7 +1,9 @@
 from flask import Flask, request
+from flask_cors import CORS
 from src.controllers import container_controller, image_controller
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/')
