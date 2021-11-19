@@ -99,7 +99,8 @@ function addContainer() {
 
     let container = {
         'image': document.getElementById('defaultForm-image').value,
-        'port': port
+        'port': port,
+        'name': document.getElementById('defaultForm-container').value
     }
 
 
