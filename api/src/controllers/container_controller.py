@@ -145,9 +145,9 @@ def delete_all(request: Request) -> dict:
         if amount_containers_running == 0:
             return create_success_response(True)
         elif amount_containers_running == 1:
-            return create_fail_response('Container ' + containers_running[0] + ' está sendo executado')
+            return create_success_response('Container ' + containers_running[0] + ' está sendo executado')
 
-        return create_fail_response('Containers ' + ', '.join(containers_running) + ' estão sendo executados')
+        return create_success_response('Containers ' + ', '.join(containers_running) + ' estão sendo executados')
     except Exception as exception:
         print(exception)
         return create_unexpected_error_response()

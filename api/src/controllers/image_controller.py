@@ -71,19 +71,19 @@ def delete_all(request: Request) -> dict:
         images_in_use = []
 
         for image in images:
-            was_deleted = image_service.delete(image.id)
+            was_deleted = image_service.delete(image.short_id)
 
             if not was_deleted:
-                images_in_use.append(image.id)
+                images_in_use.append(image.short_id)
 
         amount_images_in_use = len(images_in_use)
 
         if amount_images_in_use == 0:
             return create_success_response(True)
         elif amount_images_in_use == 1:
-            return create_fail_response('Imagem ' + images_in_use[0] + ' sendo usada em algum container')
+            return create_success_response('Imagem ' + images_in_use[0] + ' sendo usada em algum container')
 
-        return create_fail_response('Imagens ' + ', '.join(images_in_use) + ' sendo usadas em alguns containers')
+        return create_success_response('Imagens ' + ', '.join(images_in_use) + ' sendo usadas em alguns containers')
     except Exception as exception:
         print(exception)
         return create_unexpected_error_response()
