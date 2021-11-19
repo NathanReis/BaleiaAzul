@@ -125,17 +125,31 @@ img {
 }
 
 .button_create{
-    margin: 1rem;
-    color: #ffffff;
+  margin: 1rem;
+  color: #ffffff;
   background: linear-gradient(to bottom left, #8da6ef 40%, #6879ed 100%);
-    /* width: 10%; */
   padding: 0.8rem;
   font-size: 14px;
   text-transform: uppercase;
   border-radius: 4px;
   font-weight: 400;
   display: block;
-  /* width: 100%; */
   cursor: pointer;
-  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.button_delete{
+  margin: 1rem;
+  color: #ffffff;
+  background: linear-gradient(to bottom left, #dc3545 40%, #b93459 100%);
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  cursor: pointer;
+}
+
+.invisible{
+  visibility: hidden;
 }
