@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -63,7 +63,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 1
       },
@@ -151,7 +151,7 @@
         "colorMode": "value",
         "graphMode": "area",
         "justifyMode": "center",
-        "orientation": "vertical",
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "last"
@@ -261,8 +261,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 1
       },
       "id": 10,
@@ -351,7 +351,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 10
       },
@@ -429,8 +429,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
-        "x": 6,
+        "w": 6,
+        "x": 5,
         "y": 10
       },
       "id": 9,
@@ -555,8 +555,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 10
       },
       "id": 17,
@@ -654,7 +654,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 20
       },
@@ -742,7 +742,7 @@
         "colorMode": "value",
         "graphMode": "area",
         "justifyMode": "center",
-        "orientation": "vertical",
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "last"
@@ -852,8 +852,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 20
       },
       "id": 24,
@@ -942,7 +942,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 29
       },
@@ -1020,8 +1020,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
-        "x": 6,
+        "w": 6,
+        "x": 5,
         "y": 29
       },
       "id": 22,
@@ -1146,8 +1146,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 29
       },
       "id": 25,
@@ -1245,7 +1245,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 39
       },
@@ -1333,7 +1333,7 @@
         "colorMode": "value",
         "graphMode": "area",
         "justifyMode": "center",
-        "orientation": "vertical",
+        "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
             "last"
@@ -1443,8 +1443,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 39
       },
       "id": 30,
@@ -1533,7 +1533,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 48
       },
@@ -1611,8 +1611,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
-        "x": 6,
+        "w": 6,
+        "x": 5,
         "y": 48
       },
       "id": 29,
@@ -1737,8 +1737,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 48
       },
       "id": 31,
@@ -1836,7 +1836,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 58
       },
@@ -2034,8 +2034,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 58
       },
       "id": 38,
@@ -2124,7 +2124,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 67
       },
@@ -2202,8 +2202,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 4,
-        "x": 6,
+        "w": 6,
+        "x": 5,
         "y": 67
       },
       "id": 37,
@@ -2328,8 +2328,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
-        "x": 12,
+        "w": 13,
+        "x": 11,
         "y": 67
       },
       "id": 39,
@@ -2406,5 +2406,5 @@
   "timezone": "utc",
   "title": "BaleiaAzul",
   "uid": "3UnC6xcnk",
-  "version": 4
+  "version": 1
 }

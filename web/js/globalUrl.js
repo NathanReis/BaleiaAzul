@@ -1,2 +1,1 @@
-var baseUrl = 'http://192.168.0.24:5000'
-var baseUrl2 = 'http://192.168.0.24'
+var baseUrl = 'http://192.168.1.7:5000'

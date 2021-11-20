@@ -13,7 +13,7 @@ window.onload = () => {
                 const container = containers[index];
 
                 let card =
-                    ` 
+                    `
                     <li class="cards_item" id="${container.id}">
                         <div class="card">
                             <div class="card_image"><img width="300" height="200" src="../assets/docker.png"></div>
@@ -38,10 +38,10 @@ window.onload = () => {
                                         </svg>
                                         <p>Parar</p>
                                     </span>
-        
+
                                 </div>
                                 <div class="d-flex">
-                                    <span class="btn card_btn" id="view${container.id}">
+                                    <span class="btn card_btn" id="view${container.id}" onclick="viewContainer('${container.ports ? Object.values(container.ports[0])[0] : null}')">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                             class="bi bi-eye" viewBox="0 0 16 16">
                                             <path
@@ -61,7 +61,7 @@ window.onload = () => {
                                         </svg>
                                         <p>Deletar</p>
                                     </span>
-        
+
                                 </div>
                             </div>
                         </div>
@@ -72,10 +72,6 @@ window.onload = () => {
                 if (container.status !== 'running') {
                     view.hidden = true;
                 }
-                else {
-                    view.addEventListener('click', () => viewContainer(Object.values(container.ports[0])[0]))
-                }
-
             }
         })
         .catch(function (error) {
@@ -176,5 +172,5 @@ function stopContainer(id) {
 
 function viewContainer(port) {
     console.log(port)
-    // window.open(`${baseUrl2}:${port}`, "_blank")
+    window.open(`${baseUrl.substr(0, baseUrl.lastIndexOf(':'))}:${port}`, "_blank")
 }
